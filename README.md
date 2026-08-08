@@ -58,7 +58,7 @@ Public download flow:
 
 Key artifact checksums:
 
-- `Shadowframe Setup.exe` — `B9C91EF2FFDC1EFB17B6E7B1372BD4EFE2102209761AC65F6FEACBFF0C8F2577`
+- `Shadowframe Setup.exe` — `552992C80D360610B82DDD58B5290ADC2956A770BE2F2A14023B846A61F7EC8C`
 
 ## How Shadowframe is packaged
 

@@ -204,7 +204,7 @@ Everything required for setup is packaged inside:
 
 SHA256SUMS.txt contains optional integrity checks.
 
-Run Shadowframe Setup.exe. Public builds automatically fetch the public Anima, Wan, and PhotoReal model packs from Hugging Face during setup when they are not already bundled beside the installer. Creator/private builds can still chain adjacent model-pack installers automatically.
+Run Shadowframe Setup.exe. Public builds are designed as a one-file install: choose your Shadowframe folder, then let Setup automatically fetch the public Anima, Wan, and PhotoReal model packs from Hugging Face during setup when they are not already bundled beside the installer. Creator/private builds can still chain adjacent model-pack installers automatically.
 The installer also includes $(if ($PublicRelease) { "SFW" } else { "SFW and NSFW" }) starter sample prompts and places them into the installed Shadowframe folder automatically.
 
 Silent install:

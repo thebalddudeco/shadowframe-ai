@@ -233,7 +233,7 @@ internal static class PrerequisiteChecker
         if (releaseProfile.Equals("public", StringComparison.OrdinalIgnoreCase) && options.InstallModelPacks)
         {
             required += InstallerEngine.GetRequiredPublicPackFreeSpace();
-            warnings.Add($"Public model packs are large. Setup will download about {FormatBytes(InstallerEngine.GetPublicPackDownloadBytes())} and reserve extra space while installing.");
+            warnings.Add($"Setup will automatically download about {FormatBytes(InstallerEngine.GetPublicPackDownloadBytes())} of required public model packs and reserve extra space while installing.");
         }
 
         if (drive.AvailableFreeSpace >= required)
@@ -900,15 +900,15 @@ internal sealed class InstallerForm : Form
         Icon = Icon.ExtractAssociatedIcon(Environment.ProcessPath!);
 
         var accent = Color.FromArgb(255, 102, 29);
-        var title = new Label { Text = _publicRelease ? "Install Shadowframe AI Public Edition" : "Install Shadowframe AI", Font = new Font("Segoe UI", 25, FontStyle.Bold), AutoSize = true, Location = new Point(42, 38) };
-        var subtitle = new Label { Text = _publicRelease ? "Safe local image and video creation, powered by your own GPU." : "Private local image and video generation, powered by your GPU.", ForeColor = Color.FromArgb(180, 185, 195), AutoSize = true, Location = new Point(46, 88) };
+        var title = new Label { Text = _publicRelease ? "Install Shadowframe AI" : "Install Shadowframe AI", Font = new Font("Segoe UI", 25, FontStyle.Bold), AutoSize = true, Location = new Point(42, 38) };
+        var subtitle = new Label { Text = _publicRelease ? "One setup app. Local AI creation on your own GPU. Setup handles the required public packs automatically." : "Private local image and video generation, powered by your GPU.", ForeColor = Color.FromArgb(180, 185, 195), AutoSize = true, Location = new Point(46, 88) };
         var version = new Label { Text = _publicRelease ? $"PUBLIC CORE {manifest.Version}" : $"CORE {manifest.Version}", ForeColor = accent, Font = new Font("Segoe UI Semibold", 9), AutoSize = true, Location = new Point(47, 124) };
 
         _checks.Location = new Point(47, 156);
         _checks.Size = new Size(665, 92);
         _checks.ForeColor = Color.FromArgb(210, 213, 220);
 
-        var pathLabel = new Label { Text = _publicRelease ? "Shadowframe folder" : "App install location", AutoSize = true, Location = new Point(47, 262) };
+        var pathLabel = new Label { Text = _publicRelease ? "Choose your Shadowframe folder" : "App install location", AutoSize = true, Location = new Point(47, 262) };
         _installPath.Text = options.InstallDirectory;
         _installPath.Location = new Point(47, 287);
         _installPath.Size = new Size(575, 30);
@@ -941,9 +941,9 @@ internal sealed class InstallerForm : Form
         browseOutput.FlatAppearance.BorderColor = Color.FromArgb(65, 65, 69);
         browseOutput.Click += (_, _) => Browse(_outputRoot, "Choose where Shadowframe saves generated files", "");
 
-        _singleRootHelp.Text = "Models, prompts, input, output, temp, and app state will all be created inside this Shadowframe folder automatically.";
+        _singleRootHelp.Text = "Setup will install the app here, then automatically create your models, prompts, input, output, temp, and app-state folders inside this Shadowframe location.";
         _singleRootHelp.Location = new Point(47, 330);
-        _singleRootHelp.Size = new Size(665, 42);
+        _singleRootHelp.Size = new Size(665, 56);
         _singleRootHelp.ForeColor = Color.FromArgb(180, 185, 195);
         _singleRootHelp.Visible = _publicRelease;
 
@@ -953,7 +953,7 @@ internal sealed class InstallerForm : Form
         _desktop.Location = new Point(47, _publicRelease ? 398 : 470);
         _desktop.ForeColor = Color.FromArgb(205, 208, 215);
 
-        _modelPacks.Text = _publicRelease ? "Install adjacent public model packs automatically" : "Install adjacent Anima, Wan, and PhotoReal model packs automatically";
+        _modelPacks.Text = _publicRelease ? "Automatically download and install the required public model packs" : "Install adjacent Anima, Wan, and PhotoReal model packs automatically";
         _modelPacks.Checked = options.InstallModelPacks;
         _modelPacks.AutoSize = true;
         _modelPacks.Location = new Point(47, _publicRelease ? 428 : 500);
@@ -962,7 +962,7 @@ internal sealed class InstallerForm : Form
         _progress.Location = new Point(47, _publicRelease ? 463 : 535);
         _progress.Size = new Size(665, 10);
         _progress.Style = ProgressBarStyle.Continuous;
-        _status.Text = "Ready to install";
+        _status.Text = _publicRelease ? "Ready — download one file, choose a folder, and let Setup handle the rest." : "Ready to install";
         _status.Location = new Point(47, _publicRelease ? 483 : 555);
         _status.Size = new Size(665, 28);
         _status.ForeColor = Color.FromArgb(168, 172, 182);
@@ -1055,6 +1055,7 @@ internal sealed class InstallerForm : Form
             _checks.Text = results.DisplayText;
             _primary.Enabled = results.Blockers.Count == 0;
             if (results.Blockers.Count > 0) _status.Text = "Resolve the requirements above before installing.";
+            else if (_publicRelease) _status.Text = "Ready — download one file, choose a folder, and let Setup handle the rest.";
         }
         catch (Exception exception)
         {

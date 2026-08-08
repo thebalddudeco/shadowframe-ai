@@ -1,28 +1,39 @@
 # Shadowframe AI v0.3.7
 
-Public Windows release
+The clean public Windows release is here.
 
-What this release includes
-- One-file Windows setup app: `Shadowframe.Setup.exe`
-- The setup app installs Shadowframe Core automatically
-- During setup, the public Anima, Wan, and PhotoReal model packs are downloaded automatically from Hugging Face
-- SFW sample prompts are installed automatically
-- Input, output, temp, state, and models folders are created automatically inside the chosen Shadowframe folder
+Download one file:
 
-What changed in v0.3.7
-- Simplified the public GitHub release page so the intended user download is a single setup file
-- Removed extra companion assets from the public release page to reduce confusion
-- Kept the automatic public model-pack download flow inside setup
-- Carried forward the public startup fix that prevents false five-minute launcher timeout failures
-- Preserved the up-front disk-space warning for large public model packs
+- `Shadowframe.Setup.exe`
 
-Download flow
+That’s the install. No manual Core archive handoff, no side-by-side pack juggling, and no extra setup files for a normal user to sort through.
+
+## What this release includes
+
+- a one-file Windows setup app
+- automatic Shadowframe Core install
+- automatic download of the required public Anima, Wan, and PhotoReal packs during setup
+- installed SFW starter prompts
+- automatic creation of your models, input, output, temp, and state folders inside the Shadowframe folder you choose
+
+## What changed in v0.3.7
+
+- simplified the public GitHub release page down to one intended installer download
+- tightened the setup wording so the installer repeats the same simple install story inside the app
+- kept the automatic public model-pack download flow during setup
+- carried forward the public startup fix that prevents false five-minute launcher timeout failures
+- kept the up-front disk-space warning for large public packs
+
+## Install flow
+
 1. Download `Shadowframe.Setup.exe`
 2. Run it
-3. Choose your Shadowframe install folder
-4. Let Setup download and install the required public model packs automatically
-5. Launch Shadowframe AI from the installed copy
+3. Choose your Shadowframe folder
+4. Let Setup download and install the required public packs automatically
+5. Launch Shadowframe AI
 
-Notes
-- GitHub will still show its automatic source-code archives on the release page. Normal users should ignore those and download `Shadowframe.Setup.exe`.
-- The public model packs are large, especially Wan and PhotoReal, so setup can take a while depending on your connection speed and disk performance.
+## Important note
+
+GitHub will still show its automatic source-code archives on the release page.
+
+Most users should ignore those and download `Shadowframe.Setup.exe`.

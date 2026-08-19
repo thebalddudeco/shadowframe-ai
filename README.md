@@ -4,7 +4,7 @@
 
 Shadowframe AI is a Windows-first local creative generation app built around ComfyUI. It gives users a cleaner interface for image and video workflows while keeping models, prompts, uploads, and outputs on their own machine.
 
-> **Archived:** Shadowframe AI is no longer maintained. This repository and its releases are provided as-is, with no future support, patches, model updates, or compatibility guarantees. See [docs/PROJECT-ARCHIVED.md](docs/PROJECT-ARCHIVED.md) for the final project notice and [docs/FINAL-RELEASE-NOTES.md](docs/FINAL-RELEASE-NOTES.md) for the closing release notes.
+> **Project closed — final release:** Shadowframe AI is officially archived. **v4.0 Nightly is the last release.** This repository and its releases are provided as-is, with no future support, patches, model updates, installer rebuilds, or compatibility guarantees. See [docs/PROJECT-ARCHIVED.md](docs/PROJECT-ARCHIVED.md) for the final project notice and [docs/FINAL-RELEASE-NOTES.md](docs/FINAL-RELEASE-NOTES.md) for the closing release notes.
 
 Public site: [shadowframe.tech](https://shadowframe.tech/)
 
@@ -17,13 +17,27 @@ This repo currently supports two Shadowframe tracks:
 - Public release track — safer packaged release flow intended for broader distribution
 - Creator/private track — the fuller local studio workflow used for development and internal testing
 
-The current tagged release is `v0.3.7`.
+The final tagged release is `v4.0 Nightly` (`v4.0-nightly`). No further Shadowframe releases are planned.
+
+## v4.0 Nightly — final Shadowframe release
+
+`v4.0 Nightly` is the final frozen Shadowframe snapshot for existing users. It preserves the last available local Windows runtime, workflow configuration, launcher behavior, and packaging notes.
+
+Shadowframe is officially closed. This release is not a preview of future development and is not supported as an ongoing service. There will be no future feature work, bug fixes, security patches, compatibility updates, model-pack refreshes, installer rebuilds, or user support.
+
+Keep the installer, model files, workflows, prompt samples, and generated outputs backed up locally. The runtime depends on the user’s Windows/GPU/ComfyUI environment and third-party model files, which may change or disappear independently of this repository.
+
+- [Download v4.0 Nightly](https://github.com/thebalddudeco/shadowframe-ai/releases/tag/v4.0-nightly)
+- [Final project archive notice](docs/PROJECT-ARCHIVED.md)
+- [Final release notes](docs/FINAL-RELEASE-NOTES.md)
 
 ## Download the public release
 
-For the public Windows release, use this link:
+For the historical public Windows release, use this link:
 
 - [GitHub release page](https://github.com/thebalddudeco/shadowframe-ai/releases/tag/v0.3.7) — download `Shadowframe.Setup.exe`
+
+For the final project snapshot, use the [v4.0 Nightly release](https://github.com/thebalddudeco/shadowframe-ai/releases/tag/v4.0-nightly). It is the last Shadowframe release.
 
 If you are installing Shadowframe, download the single Windows setup app from the release page and run it. The setup app handles the public model-pack download automatically during install.
 

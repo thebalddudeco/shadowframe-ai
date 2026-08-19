@@ -4,6 +4,8 @@
 
 Shadowframe AI is a Windows-first local creative generation app built around ComfyUI. It gives users a cleaner interface for image and video workflows while keeping models, prompts, uploads, and outputs on their own machine.
 
+> **Archived:** Shadowframe AI is no longer maintained. This repository and its releases are provided as-is, with no future support, patches, model updates, or compatibility guarantees. See [docs/PROJECT-ARCHIVED.md](docs/PROJECT-ARCHIVED.md) for the final project notice and [docs/FINAL-RELEASE-NOTES.md](docs/FINAL-RELEASE-NOTES.md) for the closing release notes.
+
 Public site: [shadowframe.tech](https://shadowframe.tech/)
 
 Brand assets and usage guidance: [BRAND.md](BRAND.md)

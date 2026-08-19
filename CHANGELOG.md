@@ -2,6 +2,13 @@
 
 All notable Shadowframe AI packaging and application changes are tracked here.
 
+## Final project status — archived
+
+This is the final Shadowframe AI update. The project is closed and no future
+feature work, compatibility patches, model-pack refreshes, security fixes, or
+user support are planned. Existing releases remain available as-is; see
+`docs/PROJECT-ARCHIVED.md` and `docs/FINAL-RELEASE-NOTES.md`.
+
 ## 0.3.6 - Public Release Finalization
 
 ### Added
